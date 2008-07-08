@@ -1,6 +1,6 @@
 ---
 name: Class-Data-Localize
-version: 0.01
+version: 0.02
 author:
   - 'Sebastian Knapp <sk@computer-leipzig.com>'
 abstract: 'Localizable, inheritable, overridable class data'
@@ -15,7 +15,7 @@ build_requires:
 provides:
   Class::Data::Localize:
     file: lib/Class/Data/Localize.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

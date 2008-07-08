@@ -4,9 +4,9 @@ WriteMakefile
 (
           'PL_FILES' => {},
           'INSTALLDIRS' => 'site',
-          'NAME' => 'Class-Data-Localize',
+          'NAME' => 'Class::Data::Localize',
           'EXE_FILES' => [],
-          'VERSION_FROM' => 'lib/Class-Data-Localize.pm',
+          'VERSION_FROM' => 'lib/Class/Data/Localize.pm',
           'PREREQ_PM' => {
                            'Test::More' => 0,
                            'ReleaseAction' => 0

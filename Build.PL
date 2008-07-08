@@ -3,10 +3,10 @@ use warnings;
 use Module::Build;
 
 my $builder = Module::Build->new(
-    module_name         => 'Class-Data-Localize',
+    module_name         => 'Class::Data::Localize',
     license             => 'perl',
     dist_author         => 'Sebastian Knapp <sk@computer-leipzig.com>',
-    dist_version        => '0.01',
+    dist_version        => '0.02',
     dist_abstract       => 
       'Localizable, inheritable, overridable class data',
     requires => {
