@@ -6,13 +6,13 @@ my $builder = Module::Build->new(
     module_name         => 'Class::Data::Localize',
     license             => 'perl',
     dist_author         => 'Sebastian Knapp <sk@computer-leipzig.com>',
-    dist_version        => '0.03_2',
+    dist_version        => '0.04',
     dist_abstract       => 
-      'Lazy, localizable, inheritable, overridable class data',
+      'Localizable, inheritable, overridable class data',
     requires => {
         'perl'          => '5.6.0',
-        'ReleaseAction' => 0
-    },
+        'ReleaseAction' => '0.07'   
+	},
     build_requires => {
         'Test::More' => 0,
     },

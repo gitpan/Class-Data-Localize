@@ -1,10 +1,18 @@
 use strict;
 use Test::More tests => 9;
 
+BEGIN {
+  use_ok('Class::Data::Localize');
+};
+
 package Ray;
-use base qw(Class::Data::Localize);
-Ray->mk_classdata('Ubu');
-Ray->mk_classdata(DataFile => '/etc/stuff/data');
+{ my ($mk_classdata,$self) = (\&Class::Data::Localize::mk_classdata,__PACKAGE__);
+  $mk_classdata->($self,'Ubu');
+  $mk_classdata->($self,DataFile => '/etc/stuff/data');
+}
+
+# "base" needs this.
+sub emptysub {};
 
 package Gun;
 use base qw(Ray);
@@ -34,14 +42,13 @@ is +Ray->Ubu, undef, "But not set in parent";
   { Gun->Ubu('dup',my $local);
     is +Gun->Ubu,'dup', 'Inner localized value';
   };
-  is +Gun->Ubu,'Tremolo', 'Outer localized value';
+  is +Gun->Ubu,'Tremolo', 'Outer localized value'; 
 };
 
 package Prince;
-use base qw(Class::Data::Localize);
 
 # Set up HomeDir as localizable, inheritable class data.
-Prince->mk_classdata('HomeDir');
+Class::Data::Localize::mk_classdata(__PACKAGE__,'HomeDir');
 
 sub kiss { $_[1] =~ /ess$/ }
 
@@ -53,8 +60,8 @@ Prince->HomeDir('/wooden/house');
 # Teporary move to
 { Prince->HomeDir('/stone/castle',my $move);
   if(Prince->kiss('princess')) {
-          $move->cancel ;
+          $move->cancel ;    
   }
 };
-
+     
 is +Prince->HomeDir,'/stone/castle','canceled localization';

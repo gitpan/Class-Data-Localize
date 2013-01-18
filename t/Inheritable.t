@@ -16,9 +16,9 @@ Suitcase->DataFile('/etc/otherstuff/data');
 
 package main;
 
-foreach my $class (qw/Ray Gun Suitcase/) {
-    can_ok $class =>
-    qw/mk_classdata Ubu _Ubu_accessor DataFile _DataFile_accessor/;
+foreach my $class (qw/Ray Gun Suitcase/) { 
+	can_ok $class => 
+		qw/mk_classdata Ubu _Ubu_accessor DataFile _DataFile_accessor/;
 }
 
 # Test that superclasses effect children.
