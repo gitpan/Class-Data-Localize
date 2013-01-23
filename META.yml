@@ -15,10 +15,10 @@ name: Class-Data-Localize
 provides:
   Class::Data::Localize:
     file: lib/Class/Data/Localize.pm
-    version: 0.04
+    version: 0.0401
 requires:
   ReleaseAction: 0.07
   perl: v5.6.0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.04
+version: 0.0401
